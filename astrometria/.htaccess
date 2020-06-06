@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteRule ^([a-zA-Z0-9-_/]+)/?$ ./app.php?subid=$1 [L,QSA]
+RewriteRule ^([a-zA-Z0-9-_/]+)?$ ./app.php?subid=index [L,QSA]

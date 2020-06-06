@@ -1,0 +1,10 @@
+RewriteEngine On
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+#RewriteRule ^([a-zA-Z0-9-_/]+)?$ ./assets/html/upgrade.shtml [L,QSA]
+ErrorDocument 403 /assets/html/error.shtml
+ErrorDocument 401 /assets/html/error.shtml
+ErrorDocument 404 /assets/html/error.shtml
+ErrorDocument 500 /assets/html/error.shtml
